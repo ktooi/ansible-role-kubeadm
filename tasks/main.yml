@@ -1,0 +1,5 @@
+---
+- include: swapoff.yml
+- include: modprobe.yml
+- include: kernel_parameter.yml
+- include: repository.yml

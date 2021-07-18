@@ -1,0 +1,15 @@
+---
+- name: "Load br_netfilter"
+  become: yes
+  modprobe:
+    name: br_netfilter
+    state: present
+
+- name: "Create modprobe file"
+  become: yes
+  ansible.builtin.copy:
+    dest: "/etc/modules-load.d/k8s.conf"
+    content: br_netfilter
+    owner: root
+    group: root
+    mode: 0644
